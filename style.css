@@ -1,0 +1,317 @@
+
+/* 1. RESET DAN FONT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+/* 2. BACKGROUND */
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+/* 3. GLASS CARD */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* 4. JUDUL DAN SUBTITLE */
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+}
+
+
+/* 5. FORM INPUT */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: 12px;
+}
+
+/* Responsive untuk HP */
+@media (max-width: 600px) {
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 6. INPUT DAN DROPDOWN */
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 14px 16px;
+    border-radius: 12px;
+
+    color: #fff;
+    outline: none;
+
+    font-size: 0.9rem;
+
+    transition: all 0.3s ease;
+}
+
+/* Efek saat input dipilih */
+input:focus,
+select:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+/* Placeholder input */
+input::placeholder {
+    color: #64748b;
+}
+
+/* Dropdown mata kuliah */
+#mata_kuliah {
+    background-color: #252943;
+    color: #fff;
+    cursor: pointer;
+
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+/* Pilihan mata kuliah */
+#mata_kuliah option {
+    background-color: #191d38;
+    color: #fff;
+}
+
+/* Tanggal deadline */
+input[type="date"] {
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+
+/* 7. TOMBOL TAMBAH TUGAS */
+
+.btn-submit {
+    background: linear-gradient(135deg, #38bdf8 0%, #4f46e5 100%);
+    color: white;
+
+    border: none;
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* 8. TABEL TUGAS */
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.02);
+    color: #94a3b8;
+
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+td {
+    color: #e2e8f0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 0.95rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* 9. BADGE STATUS */
+
+.badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-pending {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+}
+
+
+/* 10. TOMBOL AKSI */
+
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    border: none;
+
+    transition: all 0.2s;
+}
+
+.btn-done {
+    background: #10b981;
+    color: white;
+    margin-right: 6px;
+}
+
+.btn-done:hover {
+    background: #059669;
+}
+
+.btn-delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-delete:hover {
+    background: #ef4444;
+    color: white;
+}
+
+
+/* 11. TUGAS SELESAI */
+
+tr.completed td {
+    text-decoration: line-through;
+    color: #64748b;
+    opacity: 0.6;
+}
+
+/* 12. RESPONSIVE MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+        align-items: flex-start;
+    }
+
+    .glass-card {
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 24px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+
+    .btn-action {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        margin-bottom: 4px;
+    }
+}

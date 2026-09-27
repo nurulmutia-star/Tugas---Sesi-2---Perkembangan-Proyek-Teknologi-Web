@@ -1,0 +1,19 @@
+{
+  "name": "todo-app-premium",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "backend/server.js",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "description": "",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
